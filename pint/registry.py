@@ -36,7 +36,6 @@ import os
 import re
 import math
 import itertools
-import pkg_resources
 from decimal import Decimal
 from fractions import Fraction
 from contextlib import contextmanager, closing
@@ -347,6 +346,7 @@ class BaseRegistry(meta.with_metaclass(_Meta)):
         if isinstance(file, string_types):
             try:
                 if is_resource:
+                    import pkg_resources
                     with closing(pkg_resources.resource_stream(__name__, file)) as fp:
                         rbytes = fp.read()
                     return self.load_definitions(StringIO(rbytes.decode('utf-8')), is_resource)

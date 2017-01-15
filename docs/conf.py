@@ -13,7 +13,6 @@
 # serve to show the default.
 
 import sys, os
-import pkg_resources
 import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -51,6 +50,7 @@ author = 'Hernan E. Grecco'
 # built documents.
 
 try:                # pragma: no cover
+    import pkg_resources
     version = pkg_resources.get_distribution(project).version
 except:             # pragma: no cover
     # we seem to have a local copy not installed without setuptools

@@ -14,7 +14,6 @@
 from __future__ import with_statement
 
 
-import pkg_resources
 from .formatting import formatter
 from .registry import (UnitRegistry, LazyRegistry)
 from .errors import (DimensionalityError, OffsetUnitCalculusError,
@@ -25,6 +24,7 @@ from .context import Context
 
 
 try:                # pragma: no cover
+    import pkg_resources
     __version__ = pkg_resources.get_distribution('pint').version
 except:             # pragma: no cover
     # we seem to have a local copy not installed without setuptools
